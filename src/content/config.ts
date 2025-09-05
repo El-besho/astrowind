@@ -46,25 +46,32 @@ const metadataDefinition = () =>
     })
     .optional();
 
-const postCollection = defineCollection({
-  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/post' }),
+const servicesCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/content/services' }),
   schema: z.object({
-    publishDate: z.date().optional(),
-    updateDate: z.date().optional(),
-    draft: z.boolean().optional(),
-
     title: z.string(),
-    excerpt: z.string().optional(),
+    description: z.string(),
+    keywords: z.array(z.string()),
+    slug: z.string(),
     image: z.string().optional(),
+    metadata: metadataDefinition(),
+  }),
+});
 
-    category: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    author: z.string().optional(),
-
+const subservicesCollection = defineCollection({
+  loader: glob({ pattern: ['**/*.md', '**/*.mdx'], base: 'src/content/subservices' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    keywords: z.array(z.string()),
+    slug: z.string(),
+    service: z.string(),
+    image: z.string().optional(),
     metadata: metadataDefinition(),
   }),
 });
 
 export const collections = {
-  post: postCollection,
+  services: servicesCollection,
+  subservices: subservicesCollection,
 };

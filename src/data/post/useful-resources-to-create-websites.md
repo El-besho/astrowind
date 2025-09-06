@@ -1,17 +1,33 @@
 ---
-publishDate: 2023-08-09T00:00:00Z
-title: Useful tools and resources to create a professional website
-excerpt: Explore vital tools and resources for a sleek website. From design to functionality, our guide elevates your online presence.
+publishDate: 2024-01-10T00:00:00Z
+title: أدوات وموارد مفيدة لإنشاء منصة خدمات منزلية احترافية
+excerpt: استكشف الأدوات والموارد الحيوية لإنشاء منصة خدمات منزلية أنيقة. من التصميم إلى الوظائف، دليلنا يرفع من حضورك الرقمي.
 image: https://images.unsplash.com/photo-1637144113536-9c6e917be447?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80
 tags:
-  - front-end
-  - tools
-  - resources
+  - تطوير المواقع
+  - أدوات
+  - موارد
 ---
 
-## Magna nunc senectus torquent per fusce sapien ligula tempus cra
+## أدوات تطوير منصة الخدمات المنزلية
 
-Lorem ipsum dolor sit amet consectetur adipiscing, elit fusce imperdiet gravida velit massa, ligula aenean suscipit sociis lacinia. Sapien scelerisque rutrum sem accumsan orci imperdiet aliquam inceptos aliquet tempus ornare, netus nostra nam nunc platea pulvinar urna et suscipit pellentesque, aenean congue sociis non tellus quis proin etiam venenatis pretium. Nibh senectus lacinia volutpat nostra taciti ac posuere, dictum ultricies dictumst luctus in vehicula, mus molestie venenatis penatibus ridiculus elementum. Phasellus sollicitudin dignissim parturient tempor cubilia erat massa eleifend dapibus, condimentum cras tortor eu sem dictumst non. Faucibus neque est malesuada nostra luctus maecenas at condimentum, arcu eros vulputate curabitur blandit mollis volutpat, lectus leo dictumst duis semper tempor hendrerit. Egestas scelerisque fusce torquent cubilia consequat conubia lacus et mollis, condimentum taciti elementum sapien risus vulputate est.
+في عالم تطوير منصات الخدمات المنزلية، هناك مجموعة من الأدوات والموارد الأساسية التي تساعد في إنشاء منصة احترافية ومتطورة. من أدوات التصميم إلى منصات النشر، هذه الأدوات تضمن تجربة مستخدم متميزة وأداء عالي.
+
+## إطار العمل Astro
+
+**Astro** هو إطار عمل حديث لبناء مواقع ويب سريعة ومرنة. يتميز بـ:
+- **الأداء العالي**: تحميل سريع للصفحات
+- **دعم MDX**: لإنشاء محتوى تفاعلي
+- **التوجيه الديناميكي**: لصفحات الخدمات المتعددة
+- **تحسين محركات البحث**: SEO مدمج
+
+## Tailwind CSS للتصميم
+
+**Tailwind CSS** يوفر نظام تصميم مرن وسريع:
+- **تصميم متجاوب**: يعمل على جميع الأجهزة
+- **دعم RTL**: للغة العربية
+- **مكونات جاهزة**: لتسريع التطوير
+- **تخصيص سهل**: للألوان والخطوط
 
 Tristique eleifend enim praesent mollis sem leo, molestie dictum penatibus sodales consequat ligula nulla, platea feugiat aptent sapien turpis. Mollis mus ac taciti maecenas pretium hendrerit proin accumsan, mattis dictumst netus nunc facilisi morbi cursus euismod quis, a commodo nulla integer varius enim vehicula. Consequat mi risus vulputate ullamcorper sociosqu pretium molestie cursus, parturient viverra non tempor tellus convallis vitae eleifend mus, bibendum pellentesque imperdiet vivamus nunc phasellus iaculis. Volutpat est ac dictumst eleifend maecenas torquent quam hac, mollis aliquam mattis euismod ornare risus fringilla proin nisi, sem fermentum primis ultrices varius etiam id. Posuere nunc mus curabitur condimentum lobortis euismod donec tincidunt ridiculus, tristique senectus cum taciti quam blandit leo malesuada, sociis nullam cras litora sem laoreet sed nec.
 

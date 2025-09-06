@@ -13,11 +13,11 @@ metadata:
 
 في المشهد الرقمي الواسع، التميز ليس مجرد رغبة - إنه ضرورة. مرحباً بك في عالم الخدمات المنزلية السعودية، الأبطال المجهولون في تحسين جودة الحياة المنزلية. مع قوة منصة الخدمات المنزلية السعودية، المطورة باستخدام Astro و Tailwind CSS، أصبح إنشاء هذه الصفحات أكثر سهولة. دعنا نتعمق في فهم وإنشاء وتحسين الخدمات المنزلية.
 
-## Landing Pages Unveiled
+## الخدمات المنزلية السعودية
 
-A **Landing Page** is a standalone web page, distinct from your main website. Crafted with a singular objective: to convert visitors into actionable leads or sales. It's where a visitor "lands" post-clicking on a marketing link or ad.
+**الخدمات المنزلية** هي خدمات متخصصة تهدف إلى تحسين جودة الحياة في المنازل السعودية. مصممة بهدف واحد: توفير حلول شاملة لجميع احتياجات المنزل. إنها المكان الذي يجد فيه أصحاب المنازل جميع الخدمات التي يحتاجونها تحت سقف واحد.
 
-Imagine clicking on an ad for a limited-time discount on a popular shoe brand. This action guides you to a page that showcases the discounted shoes, featuring a clear "Buy Now" button. That's a Landing Page in action, focusing your attention solely on the offer.
+تخيل أنك تحتاج إلى خدمة مكافحة الحشرات في الرياض. ستجد صفحة مخصصة تعرض جميع خدمات مكافحة الحشرات المتاحة، مع تفاصيل شاملة عن كل خدمة فرعية مثل رش الدفان، مكافحة الصراصير، أو معالجة بق الفراش. هذا هو عمل منصة الخدمات المنزلية في الواقع، مركزة انتباهك على الحلول المتخصصة.
 
 ## The Power of Precision
 

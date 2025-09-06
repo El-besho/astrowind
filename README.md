@@ -1,86 +1,121 @@
-# 🚀 AstroWind
+# 🏠 منصة الخدمات المنزلية السعودية
 
 <img src="https://raw.githubusercontent.com/arthelokyo/.github/main/resources/astrowind/lighthouse-score.png" align="right"
-     alt="AstroWind Lighthouse Score" width="100" height="358">
+     alt="Saudi Home Services Platform Lighthouse Score" width="100" height="358">
 
-🌟 _Most *starred* & *forked* Astro theme in 2022, 2023 & 2024_. 🌟
+🌟 _منصة شاملة للخدمات المنزلية في المملكة العربية السعودية_. 🌟
 
-**AstroWind** is a free and open-source template to make your website using **[Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
+**منصة الخدمات المنزلية السعودية** هي منصة متكاملة للخدمات المنزلية مبنية باستخدام **[Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. مصممة خصيصاً للسوق السعودي مع دعم كامل للغة العربية والتخطيط من اليمين إلى اليسار.
 
-- ✅ **Production-ready** scores in **PageSpeed Insights** reports.
-- ✅ Integration with **Tailwind CSS** supporting **Dark mode** and **_RTL_**.
-- ✅ **Fast and SEO friendly blog** with automatic **RSS feed**, **MDX** support, **Categories & Tags**, **Social Share**, ...
-- ✅ **Image Optimization** (using new **Astro Assets** and **Unpic** for Universal image CDN).
-- ✅ Generation of **project sitemap** based on your routes.
-- ✅ **Open Graph tags** for social media sharing.
-- ✅ **Analytics** built-in Google Analytics, and Splitbee integration.
+- ✅ **جاهز للإنتاج** مع درجات ممتازة في **PageSpeed Insights**.
+- ✅ تكامل مع **Tailwind CSS** مع دعم **الوضع المظلم** و **RTL**.
+- ✅ **15 خدمة منزلية رئيسية** مع **60+ خدمة فرعية** متخصصة.
+- ✅ **8 مدن سعودية رئيسية** مع عوامل محلية مخصصة.
+- ✅ **توجيه ديناميكي** لجميع تركيبات المدينة-الخدمة.
+- ✅ **تحسين محركات البحث** مع **Open Graph tags** للمشاركة الاجتماعية.
+- ✅ **تحليلات مدمجة** مع Google Analytics و Splitbee.
 
 <br>
 
-![AstroWind Theme Screenshot](https://raw.githubusercontent.com/arthelokyo/.github/main/resources/astrowind/screenshot-astrowind-1.0.png)
+![Saudi Home Services Platform Screenshot](https://raw.githubusercontent.com/arthelokyo/.github/main/resources/astrowind/screenshot-astrowind-1.0.png)
 
-[![arthelokyo](https://custom-icon-badges.demolab.com/badge/made%20by%20-arthelokyo-556bf2?style=flat-square&logo=arthelokyo&logoColor=white&labelColor=101827)](https://github.com/arthelokyo)
+[![Saudi Services](https://custom-icon-badges.demolab.com/badge/made%20for%20-Saudi%20Arabia-556bf2?style=flat-square&logo=saudi&logoColor=white&labelColor=101827)](https://github.com)
 [![License](https://img.shields.io/github/license/arthelokyo/astrowind?style=flat-square&color=dddddd&labelColor=000000)](https://github.com/arthelokyo/astrowind/blob/main/LICENSE.md)
 [![Maintained](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square)](https://github.com/arthelokyo)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/arthelokyo/astrowind#contributing)
-[![Known Vulnerabilities](https://snyk.io/test/github/arthelokyo/astrowind/badge.svg?style=flat-square)](https://snyk.io/test/github/arthelokyo/astrowind)
-[![Stars](https://img.shields.io/github/stars/arthelokyo/astrowind.svg?style=social&label=stars&maxAge=86400&color=ff69b4)](https://github.com/arthelokyo/astrowind)
-[![Forks](https://img.shields.io/github/forks/arthelokyo/astrowind.svg?style=social&label=forks&maxAge=86400&color=ff69b4)](https://github.com/arthelokyo/astrowind)
+[![Arabic Support](https://img.shields.io/badge/Arabic%20Support-RTL%20Ready-brightgreen.svg?style=flat-square)](https://github.com)
+[![Cities](https://img.shields.io/badge/Cities-8%20Major%20Cities-blue.svg?style=flat-square)](https://github.com)
+[![Services](https://img.shields.io/badge/Services-15%20Main%20Services-green.svg?style=flat-square)](https://github.com)
 
 <br>
 
 <details open>
-<summary>Table of Contents</summary>
+<summary>جدول المحتويات</summary>
 
-- [Demo](#demo)
-- [Upcoming: AstroWind 2.0 – We Need Your Vision!](#-upcoming-astrowind-20--we-need-your-vision)
-- [TL;DR](#tldr)
-- [Getting started](#getting-started)
-  - [Project structure](#project-structure)
-  - [Commands](#commands)
-  - [Configuration](#configuration)
-  - [Deploy](#deploy)
-- [Frequently Asked Questions](#frequently-asked-questions)
-- [Related Projects](#related-projects)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
+- [عرض تجريبي](#عرض-تجريبي)
+- [الخدمات المتاحة](#الخدمات-المتاحة)
+- [المدن المدعومة](#المدن-المدعومة)
+- [بدء الاستخدام](#بدء-الاستخدام)
+  - [هيكل المشروع](#هيكل-المشروع)
+  - [الأوامر](#الأوامر)
+  - [التكوين](#التكوين)
+  - [النشر](#النشر)
+- [الأسئلة الشائعة](#الأسئلة-الشائعة)
+- [المشاريع ذات الصلة](#المشاريع-ذات-الصلة)
+- [المساهمة](#المساهمة)
+- [شكر وتقدير](#شكر-وتقدير)
+- [الترخيص](#الترخيص)
 
 </details>
 
 <br>
 
-## Demo
+## عرض تجريبي
 
-📌 [https://astrowind.vercel.app/](https://astrowind.vercel.app/)
-
-<br>
-
-## 🔔 Upcoming: AstroWind 2.0 – We Need Your Vision!
-
-We're embarking on an exciting journey with **AstroWind 2.0**, and we want you to be a part of it! We're currently taking the first steps in developing this new version and your insights are invaluable. Join the discussion and share your feedback, ideas, and suggestions to help shape the future of **AstroWind**. Let's make **AstroWind 2.0** even better, together!
-
-[Share Your Feedback in Our Discussion!](https://github.com/arthelokyo/astrowind/discussions/392)
+📌 [https://saudi-services.vercel.app/](https://saudi-services.vercel.app/)
 
 <br>
 
-## TL;DR
+## الخدمات المتاحة
+
+### 🏠 الخدمات المنزلية الرئيسية (15 خدمة)
+
+1. **مكافحة الحشرات** - رش الدفان، الصراصير، بق الفراش، النمل، القوارض
+2. **تنظيف المنازل** - التنظيف العميق، تنظيف الحوش، المطبخ، السجاد، الكنب
+3. **كشف تسربات المياه** - كشف الأنابيب، الخزانات، التصوير الحراري، الكشف تحت الأرض
+4. **السباكة** - سباك طوارئ، تمديد الأنابيب، تسليك المجاري، صيانة سخان المياه
+5. **خدمات الكهرباء** - تمديد الكهرباء، إصلاح الكهرباء، تركيب الإضاءة، صيانة الكهرباء
+6. **صيانة التكييف** - تركيب المكيفات، صيانة المكيفات، إصلاح المكيفات، تنظيف مجاري التكييف
+7. **خدمات العزل** - العزل الحراري، العزل الصوتي، العزل المائي، عزل الأسطح
+8. **نقل العفش** - نقل المنازل، فك وتركيب الأثاث، خدمات التعبئة، نقل المكاتب
+9. **تنسيق الحدائق** - تصميم الحدائق، العناية بالمسطحات الخضراء، أنظمة الري، تقليم الأشجار
+10. **الديكورات الداخلية** - أعمال الجبس، تركيب ورق الحائط، بدائل الخشب، بدائل الرخام
+11. **صيانة الأجهزة المنزلية** - صيانة الثلاجات، الغسالات، النشافات، غسالات الأطباق
+12. **خدمات النجارة** - الأبواب الخشبية، النوافذ الخشبية، الأثاث الخشبي، الخزائن الخشبية
+13. **خدمات الدهان** - الدهان الداخلي، الدهان الخارجي، الدهان الملمس، الدهان المضاد للماء
+14. **أنظمة الأمان** - تركيب كاميرات المراقبة، أنظمة الإنذار، التحكم في الوصول، أنظمة السلامة من الحرائق
+15. **الصيانة العامة** - صيانة السباكة، صيانة الكهرباء، صيانة التكييف والتدفئة، الصيانة الإنشائية، الصيانة الوقائية
+
+<br>
+
+## المدن المدعومة
+
+### 🏙️ المدن الرئيسية (8 مدن)
+
+1. **الرياض** - العاصمة (7 مليون نسمة)
+2. **جدة** - العاصمة التجارية (4.5 مليون نسمة)
+3. **مكة المكرمة** - المدينة المقدسة (2 مليون نسمة)
+4. **المدينة المنورة** - المدينة النبوية (1.5 مليون نسمة)
+5. **الدمام** - العاصمة الشرقية (1.2 مليون نسمة)
+6. **أبها** - عاصمة الجنوب (500 ألف نسمة)
+7. **تبوك** - بوابة الشمال (600 ألف نسمة)
+8. **الخبر** - المدينة الساحلية (700 ألف نسمة)
+
+كل مدينة تحتوي على:
+- **الأحياء الرئيسية** مع الأسماء العربية والإنجليزية
+- **العوامل المناخية** المحددة
+- **المشاكل الشائعة** في المنطقة
+- **التوطين المحلي** للخدمات
+
+<br>
+
+## بدء الاستخدام السريع
 
 ```shell
 npm create astro@latest -- --template arthelokyo/astrowind
 ```
 
-## Getting started
+## بدء الاستخدام
 
-**AstroWind** tries to give you quick access to creating a website using [Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
+**منصة الخدمات المنزلية السعودية** تمنحك وصولاً سريعاً لإنشاء منصة خدمات منزلية شاملة باستخدام [Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). إنها منصة مجانية تركز على البساطة والممارسات الجيدة والأداء العالي.
 
-Very little vanilla javascript is used only to provide basic functionality so that each developer decides which framework (React, Vue, Svelte, Solid JS...) to use and how to approach their goals.
+يتم استخدام القليل جداً من JavaScript العادي فقط لتوفير الوظائف الأساسية، مما يسمح لكل مطور أن يقرر أي إطار عمل (React, Vue, Svelte, Solid JS...) يستخدم وكيفية تحقيق أهدافه.
 
-In this version the template supports all the options in the `output` configuration, `static`, `hybrid` and `server`, but the blog only works with `prerender = true`. We are working on the next version and aim to make it fully compatible with SSR.
+في هذه النسخة، تدعم المنصة جميع خيارات تكوين `output`، `static`، `hybrid` و `server`، مع دعم كامل للغة العربية والتخطيط من اليمين إلى اليسار.
 
-### Project structure
+### هيكل المشروع
 
-Inside **AstroWind** template, you'll see the following folders and files:
+داخل **منصة الخدمات المنزلية السعودية**، ستجد المجلدات والملفات التالية:
 
 ```
 /

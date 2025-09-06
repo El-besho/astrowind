@@ -1,39 +1,39 @@
 ---
-title: 'Terms and Conditions'
+title: 'الشروط والأحكام'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: January 06, 2023
+_آخر تحديث_: يناير 2024
 
-Please read these terms and conditions carefully before using Our Service.
+يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام خدماتنا.
 
-## Interpretation and Definitions
+## التفسير والتعريفات
 
-### Interpretation
+### التفسير
 
-The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+الكلمات التي تبدأ بحرف كبير لها معاني محددة تحت الشروط التالية. التعريفات التالية ستحمل نفس المعنى بغض النظر عما إذا كانت تظهر بصيغة المفرد أو الجمع.
 
-### Definitions
+### التعريفات
 
-For the purposes of these Terms and Conditions:
+لأغراض هذه الشروط والأحكام:
 
-- **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+- **الشركة التابعة** تعني كياناً يتحكم فيه أو يخضع لسيطرة مشتركة مع طرف آخر، حيث "السيطرة" تعني امتلاك 50% أو أكثر من الأسهم أو حقوق الملكية أو الأوراق المالية الأخرى المخولة للتصويت لانتخاب المديرين أو السلطة الإدارية الأخرى.
 
-- **Country** refers to: California, United States
+- **البلد** يشير إلى: المملكة العربية السعودية
 
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014.
+- **الشركة** (يشار إليها إما باسم "الشركة"، "نحن"، "لنا" أو "خدماتنا" في هذه الاتفاقية) تشير إلى منصة الخدمات المنزلية السعودية.
 
-- **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
+- **الجهاز** يعني أي جهاز يمكنه الوصول إلى الخدمة مثل الكمبيوتر أو الهاتف المحمول أو الجهاز اللوحي الرقمي.
 
-- **Service** refers to the Website.
+- **الخدمة** تشير إلى الموقع الإلكتروني.
 
-- **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo.
+- **الشروط والأحكام** (يشار إليها أيضاً باسم "الشروط") تعني هذه الشروط والأحكام التي تشكل الاتفاقية الكاملة بينك وبين الشركة فيما يتعلق باستخدام الخدمة.
 
-- **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
+- **خدمة وسائل التواصل الاجتماعي لطرف ثالث** تعني أي خدمات أو محتوى (بما في ذلك البيانات أو المعلومات أو المنتجات أو الخدمات) مقدمة من طرف ثالث قد يتم عرضها أو تضمينها أو جعلها متاحة من خلال الخدمة.
 
-- **Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)
+- **الموقع الإلكتروني** يشير إلى منصة الخدمات المنزلية السعودية، المتاح من [https://saudi-services.vercel.app](https://saudi-services.vercel.app)
 
-- **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+- **أنت** تعني الفرد الذي يصل إلى الخدمة أو يستخدمها، أو الشركة، أو الكيان القانوني الآخر الذي يمثله هذا الفرد في الوصول إلى الخدمة أو استخدامها، حسب الاقتضاء.
 
 ## Acknowledgment
 

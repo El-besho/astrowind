@@ -1,0 +1,212 @@
+---
+import { getCollection, render } from 'astro:content';
+import { getCityBySlug, getAllCitySlugs } from '~/data/locations';
+import ServiceLayout from '~/layouts/ServiceLayout.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  const subservices = await getCollection('subservices');
+  const cities = getAllCitySlugs();
+  
+  const paths = [];
+  
+  // Generate paths for each city-service-subservice combination
+  for (const city of cities) {
+    for (const service of services) {
+      const serviceSubservices = subservices.filter(sub => sub.data.service === service.data.slug);
+      
+      for (const subservice of serviceSubservices) {
+        paths.push({
+          params: { 
+            city: city, 
+            service: service.data.slug,
+            subservice: subservice.data.slug
+          },
+          props: { 
+            service: service,
+            subservice: subservice,
+            city: city
+          }
+        });
+      }
+    }
+  }
+  
+  return paths;
+}
+
+const { city, service, subservice } = Astro.params;
+const { service: serviceData, subservice: subserviceData } = Astro.props;
+
+// Get city information
+const cityInfo = getCityBySlug(city);
+
+// Get other subservices for this service
+const otherSubservices = await getCollection('subservices', (entry) => {
+  return entry.data.service === serviceData.data.slug && entry.data.slug !== subserviceData.data.slug;
+});
+
+// Render the subservice content
+const { Content } = await render(subserviceData);
+---
+
+<ServiceLayout 
+  title={subserviceData.data.title}
+  description={subserviceData.data.description}
+  keywords={subserviceData.data.keywords}
+  city={city}
+  service={serviceData.data.slug}
+>
+  <!-- Subservice Description -->
+  <div class="mb-8">
+    <Content />
+  </div>
+
+  <!-- Service Process -->
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+      كيف نقدم خدمة {subserviceData.data.title}؟
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center">
+        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+          1
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">التواصل الأولي</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">اتصل بنا أو أرسل رسالة واتساب</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+          2
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">المعاينة والتقييم</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">زيارة مجانية لتقييم الوضع</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+          3
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">عرض السعر</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">عرض سعر شفاف ومفصل</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+          4
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">تنفيذ الخدمة</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">تنفيذ احترافي وضمان الجودة</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Information -->
+  <section class="mb-12 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-8">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+      أسعار خدمة {subserviceData.data.title} في {cityInfo?.nameArabic}
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-md">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">الباقة الأساسية</h3>
+        <div class="text-3xl font-bold text-primary mb-4">199 ريال</div>
+        <ul class="text-gray-600 dark:text-gray-300 space-y-2 mb-6">
+          <li>✓ خدمة أساسية</li>
+          <li>✓ ضمان شهر واحد</li>
+          <li>✓ دعم فني</li>
+        </ul>
+        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors">
+          اختر الباقة
+        </button>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-md border-2 border-primary">
+        <div class="bg-primary text-white px-4 py-1 rounded-full text-sm mb-4 inline-block">الأكثر طلباً</div>
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">الباقة المتقدمة</h3>
+        <div class="text-3xl font-bold text-primary mb-4">349 ريال</div>
+        <ul class="text-gray-600 dark:text-gray-300 space-y-2 mb-6">
+          <li>✓ خدمة شاملة</li>
+          <li>✓ ضمان 3 أشهر</li>
+          <li>✓ دعم فني متقدم</li>
+          <li>✓ متابعة دورية</li>
+        </ul>
+        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors">
+          اختر الباقة
+        </button>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-md">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">الباقة المميزة</h3>
+        <div class="text-3xl font-bold text-primary mb-4">499 ريال</div>
+        <ul class="text-gray-600 dark:text-gray-300 space-y-2 mb-6">
+          <li>✓ خدمة VIP</li>
+          <li>✓ ضمان 6 أشهر</li>
+          <li>✓ دعم فني 24/7</li>
+          <li>✓ خدمات إضافية</li>
+        </ul>
+        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors">
+          اختر الباقة
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Subservices -->
+  {otherSubservices.length > 0 && (
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+        خدمات أخرى قد تهمك
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {otherSubservices.map((otherSubservice) => (
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              {otherSubservice.data.title}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              {otherSubservice.data.description}
+            </p>
+            <a 
+              href={`/sa/${city}/${serviceData.data.slug}/${otherSubservice.data.slug}`}
+              class="inline-flex items-center text-primary hover:text-primary/80 font-semibold"
+            >
+              اعرف المزيد
+              <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ Section -->
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+      أسئلة شائعة حول {subserviceData.data.title}
+    </h2>
+    <div class="space-y-4">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">
+          كم تستغرق خدمة {subserviceData.data.title}؟
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          عادة ما تستغرق الخدمة من 2-4 ساعات حسب حجم المكان ونوع المشكلة.
+        </p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">
+          هل تقدمون ضمان على الخدمة؟
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          نعم، نقدم ضمان يتراوح من شهر إلى 6 أشهر حسب نوع الباقة المختارة.
+        </p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">
+          هل المواد المستخدمة آمنة؟
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          نستخدم مواد معتمدة وآمنة على الصحة والبيئة، ومطابقة للمعايير السعودية.
+        </p>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

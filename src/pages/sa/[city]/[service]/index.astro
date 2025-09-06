@@ -1,0 +1,148 @@
+---
+import { getCollection, render } from 'astro:content';
+import { getCityBySlug, getAllCitySlugs } from '~/data/locations';
+import ServiceLayout from '~/layouts/ServiceLayout.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  const cities = getAllCitySlugs();
+  
+  const paths = [];
+  
+  // Generate paths for each city-service combination
+  for (const city of cities) {
+    for (const service of services) {
+      paths.push({
+        params: { 
+          city: city, 
+          service: service.data.slug 
+        },
+        props: { 
+          service: service,
+          city: city
+        }
+      });
+    }
+  }
+  
+  return paths;
+}
+
+const { city, service } = Astro.params;
+const { service: serviceData } = Astro.props;
+
+// Get subservices for this service
+const subservices = await getCollection('subservices', (entry) => {
+  return entry.data.service === serviceData.data.slug;
+});
+
+// Get city information
+const cityInfo = getCityBySlug(city);
+
+// Render the service content
+const { Content } = await render(serviceData);
+---
+
+<ServiceLayout 
+  title={serviceData.data.title}
+  description={serviceData.data.description}
+  keywords={serviceData.data.keywords}
+  city={city}
+  service={serviceData.data.slug}
+>
+  <!-- Service Description -->
+  <div class="mb-8">
+    <Content />
+  </div>
+
+  <!-- Subservices Section -->
+  {subservices.length > 0 && (
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+        الخدمات الفرعية المتاحة في {cityInfo?.nameArabic}
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {subservices.map((subservice) => (
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              {subservice.data.title}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              {subservice.data.description}
+            </p>
+            <a 
+              href={`/sa/${city}/${serviceData.data.slug}/${subservice.data.slug}`}
+              class="inline-flex items-center text-primary hover:text-primary/80 font-semibold"
+            >
+              اعرف المزيد
+              <svg class="w-4 h-4 mr-2 rtl:ml-2 rtl:mr-0 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Why Choose Us Section -->
+  <section class="mb-12 bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+      لماذا تختار خدماتنا في {cityInfo?.nameArabic}؟
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center">
+        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">جودة مضمونة</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">نضمن جودة العمل بنسبة 100%</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">خدمة سريعة</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">استجابة فورية وخدمة في نفس اليوم</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">أسعار منافسة</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">أفضل الأسعار في السوق</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 110 19.5 9.75 9.75 0 010-19.5z"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 dark:text-white mb-2">دعم 24/7</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">متوفرون على مدار الساعة</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+      المناطق التي نخدمها في {cityInfo?.nameArabic}
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {cityInfo?.neighborhoods.map((neighborhood) => (
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow-sm">
+          <span class="text-gray-900 dark:text-white font-medium">
+            {neighborhood.nameArabic}
+          </span>
+        </div>
+      ))}
+    </div>
+  </section>
+</ServiceLayout>
